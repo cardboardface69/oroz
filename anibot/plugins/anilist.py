@@ -45,10 +45,17 @@ no_pic = [
 async def mana_cmd(client: Client, message: Message):
       try:
          kaze = await message.delete()
-         zex = await client.send_message(chat_id = message.chat.id, text="Not allowed")
+         zex = await client.send_message(chat_id = message.chat.id, text="Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
       except:
           pass
-
+@anibot.on_message(filters.chat(-1001541249835) & filters.regex("Zoro.to"))
+async def mana_cmd(client: Client, message: Message):
+      try:
+         kaze = await message.delete()
+         zex = await client.send_message(chat_id = message.chat.id, text="Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
+      except:
+          pass
+        
 @anibot.on_message(filters.command(["manga", f"manga{BOT_NAME}"], prefixes=trg))
 @control_user
 async def manga_cmd(client: Client, message: Message, mdata: dict):
