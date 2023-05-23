@@ -41,14 +41,14 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
-@anibot.on_message(filters.chat(-1001541249835) & filters.regex("zoro.to"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
       try:
          kaze = await message.delete()
          zex = await client.send_message(chat_id = message.chat.id, text="Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
       except:
           pass
-@anibot.on_message(filters.chat(-1001541249835) & filters.regex("Zoro.to"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"))
 async def mana_cmd(client: Client, message: Message):
       try:
          kaze = await message.delete()
