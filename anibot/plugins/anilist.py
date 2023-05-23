@@ -45,7 +45,8 @@ no_pic = [
 async def mana_cmd(client: Client, message: Message):
       try:
          kaze = await message.delete()
-         zex = await client.send_message(chat_id = message.chat.id, text="Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
+         ser = message.from_user.username
+         zex = await client.send_message(chat_id = message.chat.id, text=f"{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
       except:
           pass
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"))
