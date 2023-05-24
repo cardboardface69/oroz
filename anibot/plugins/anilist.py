@@ -50,7 +50,7 @@ async def mana_cmd(client: Client, message: Message):
           pass
         
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.pm"))
-async def mana_cmd(client: Client, message: Message):
+async def malna_cmd(client: Client, message: Message):
       try:
          ser = message.from_user.username
          zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
