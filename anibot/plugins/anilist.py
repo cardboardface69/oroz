@@ -175,7 +175,7 @@ async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
 
-         await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**)
+         await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
 
          await message.delete()
 
