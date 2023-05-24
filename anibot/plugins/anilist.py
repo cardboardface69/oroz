@@ -114,7 +114,7 @@ async def mana_cmd(client: Client, message: Message):
       except:
           pass
 
-        @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.pm"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.pm"))
 
 async def mana_cmd(client: Client, message: Message):
 
