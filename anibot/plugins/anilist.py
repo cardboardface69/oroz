@@ -128,12 +128,11 @@ async def mana_cmd(client: Client, message: Message):
       except:
 
           pass
-siz = '''"9anime", "9ani", "4anime", "nhentai", "animix", "an!m!x", "animixplay", "Animixplay", "Nhentai", "g o g o a n i m e", "twist.moe", "animepahe", "Animepahe", "Animebee", "animebee", "kissanime"'''
+          
 
 
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex('''"9anime", "9ani", "4anime", "nhentai", "animix", "an!m!x", "animixplay", "Animixplay", "Nhentai", "g o g o a n i m e", "twist.moe", "animepahe", "Animepahe", "Animebee", "animebee", "kissanime"'''))
 
-
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex(siz))
 
 async def mana_cmd(client: Client, message: Message):
 
