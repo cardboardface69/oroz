@@ -128,7 +128,7 @@ async def mana_cmd(client: Client, message: Message):
       except:
 
           pass
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime" or "9ani" or "4anime" or "nhentai" or "animix" or "an!m!x" or "animixplay" or "Animixplay" or "Nhentai" or "g o g o a n i m e" or "twist.moe" or "animepahe" or "Animepahe","Animebee" or "animebee" or "kissanime"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime" or "9ani" or "4anime" or "nhentai" or "animix" or "an!m!x" or "animixplay" or "Animixplay" or "Nhentai" or "g o g o a n i m e" or "twist.moe" or "animepahe" or "Animepahe" or "Animebee" or "animebee" or "kissanime"))
 
 async def mana_cmd(client: Client, message: Message):
 
