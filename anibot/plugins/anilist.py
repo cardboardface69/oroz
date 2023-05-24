@@ -55,6 +55,7 @@ async def malna_cmd(client: Client, message: Message):
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
+           
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.sx"))
 async def mana_cmd(client: Client, message: Message):
       
@@ -178,8 +179,16 @@ async def mana_cmd(client: Client, message: Message):
          await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
 
          await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Gogoanime"))
 
 
+async def mana_cmd(client: Client, message: Message):
+
+         ser = message.from_user.username
+
+         await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
+
+         await message.delete()
           
 
 
