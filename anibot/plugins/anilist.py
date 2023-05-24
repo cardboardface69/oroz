@@ -1417,7 +1417,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Ginko"
          if ser==k:
-             ginr = await client.send_message(chat_id=zoro_id, text="⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             ginr = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
              await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
@@ -1425,7 +1425,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "ginko"
          if ser==k:
-             gin = await client.send_message(chat_id=zoro_id, text="⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
              await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
@@ -1433,14 +1433,14 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "GINKO"
          if ser==k:
-             gin = await client.send_message(chat_id=zoro_id, text"⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
              await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
 
          ser = str(message.from_user.first_name)
          if ser==k:
-             gin = await client.send_message(chat_id=zoro_id, text="⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
              await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
@@ -1448,5 +1448,5 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Gin-ko"
          if ser==k:
-             gin = await client.send_message(chat_id=zoro_id, text"⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @cardboard_face3667 @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
              await message.delete()
