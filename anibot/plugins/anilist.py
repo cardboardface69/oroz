@@ -49,7 +49,7 @@ async def mana_cmd(client: Client, message: Message):
       except:
           pass
 
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"|"Zoro.pm"|"Zoroanime.net"|"Zoro.sx"|"Zoro.moe"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to" or "Zoro.pm" or "Zoroanime.net" or "Zoro.sx" or "Zoro.moe"))
 async def mana_cmd(client: Client, message: Message):
       try:
          ser = message.from_user.username
@@ -128,7 +128,7 @@ async def mana_cmd(client: Client, message: Message):
       except:
 
           pass
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime","9ani","4anime","nhentai","animix","an!m!x","animixplay","Animixplay","Nhentai","g o g o a n i m e","twist.moe","animepahe","Animepahe","Animebee","animebee","kissanime"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime" or "9ani" or "4anime" or "nhentai" or "animix" or "an!m!x" or "animixplay" or "Animixplay" or "Nhentai" or "g o g o a n i m e" or "twist.moe" or "animepahe" or "Animepahe","Animebee" or "animebee" or "kissanime"))
 
 async def mana_cmd(client: Client, message: Message):
 
