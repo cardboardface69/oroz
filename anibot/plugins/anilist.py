@@ -44,65 +44,65 @@ no_pic = [
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
 
         
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.pm"))
 async def malna_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.sx"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoroanime.net"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          kaze = await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.sx"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoroanime.net"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.moe"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.moe"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.pm"))
@@ -113,17 +113,17 @@ async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
 
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
 
-         kaze = await message.delete()
+         await message.delete()
 
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("goku.to"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
         
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Goku.to"))
@@ -134,9 +134,9 @@ async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
 
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
 
-         kaze = await message.delete()
+         await message.delete()
 
     
 
@@ -145,15 +145,15 @@ async def mana_cmd(client: Client, message: Message):
 async def mana_cmd(client: Client, message: Message):
     
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("mangareader.to"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
-         kaze = await message.delete()
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("gogo"))
 
@@ -162,9 +162,9 @@ async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
 
-         zex = await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
+         await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
 
-         kaze = await message.delete()
+         await message.delete()
 
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("gogoanime"))
@@ -175,9 +175,9 @@ async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
 
-         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
+         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
 
-         kaze = await message.delete()
+         await message.delete()
 
 
           
@@ -187,56 +187,56 @@ async def mana_cmd(client: Client, message: Message):
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Animepahe"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("animesuge"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Animesuge"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
     
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("kissanime"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Kissanime"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("animebee"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
    
@@ -244,48 +244,48 @@ async def mana_cmd(client: Client, message: Message):
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
      
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("animixplay"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Animixplay"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("animekaizoku"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("nyaa.si"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("animix"))
 async def mana_cmd(client: Client, message: Message):
          ser = message.from_user.username
-         zex = await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{ser}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("gogoanime"))
 async def mana_cmd(client: Client, message: Message):
       
          sr = message.from_user.username
-         zex = await message.reply_text(f"@{sr}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{sr}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
           
@@ -293,14 +293,14 @@ async def mana_cmd(client: Client, message: Message):
 async def mana_cmd(client: Client, message: Message):
       
          sk = message.from_user.username
-         zex = await message.reply_text(f"@{sk}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"@{sk}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("nhentai"))
 async def mana_cmd(client: Client, message: Message):
       
          sur = message.from_user.username
-         zex = await message.reply_text(f"@{sur}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**".)
+         await message.reply_text(f"@{sur}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**".)
 
          await message.delete()
       
