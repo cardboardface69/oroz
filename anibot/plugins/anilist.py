@@ -40,7 +40,7 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to","zoro.moe","zoro.sx","zoro.pm","zoroanzoime.net"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to" or "zoro.moe" or "zoro.sx" or "zoro.pm" or "zoroanime.net"))
 async def mana_cmd(client: Client, message: Message):
       try:
          ser = message.from_user.username
