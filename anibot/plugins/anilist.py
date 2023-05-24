@@ -1417,13 +1417,13 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Ginko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
          if ser==k:
              await message.delete()
-             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+             gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has joined the group.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user.\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
 
@@ -1437,14 +1437,16 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "GINKO"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
          if ser==k:
              await message.delete()
-             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+             gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has joined the group.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user.\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
 
+                
+                
            
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
@@ -1452,14 +1454,15 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "gin-ko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
          if ser==k:
              await message.delete()
-             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+             gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has joined the group.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
 
+            
             
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
@@ -1467,13 +1470,13 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Gin-ko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
          if ser==k:
              await message.delete()
-             gin = await client.send_message(zoro_id, "⚠Alert!\n Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+             
+             gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has joined the group.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
 
-            
          
