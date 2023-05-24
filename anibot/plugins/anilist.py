@@ -42,7 +42,6 @@ no_pic = [
 
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
-
          ser = str(message.from_user.first_name)
          k = "Ginko"
          if ser==k:
@@ -50,6 +49,47 @@ async def mana_cmd(client: Client, message: Message):
              await message.delete()
              await asyncio.sleep(180)
              await gin.delete()
+@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
+async def mana_cmd(client: Client, message: Message):
+
+         ser = str(message.from_user.first_name)
+         k = "ginko"
+         if ser==k:
+             gin = await message.reply_text(f"Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             await message.delete()
+             await asyncio.sleep(180)
+             await gin.delete()
+@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
+async def mana_cmd(client: Client, message: Message):
+
+         ser = str(message.from_user.first_name)
+         k = "GINKO"
+         if ser==k:
+             gin = await message.reply_text(f"Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             await message.delete()
+             await asyncio.sleep(180)
+             await gin.delete()
+@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
+async def mana_cmd(client: Client, message: Message):
+
+         ser = str(message.from_user.first_name)
+         k = "gin-ko"
+         if ser==k:
+             gin = await message.reply_text(f"Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             await message.delete()
+             await asyncio.sleep(180)
+             await gin.delete()
+@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
+async def mana_cmd(client: Client, message: Message):
+
+         ser = str(message.from_user.first_name)
+         k = "Gin-ko"
+         if ser==k:
+             gin = await message.reply_text(f"Ginko has joined the group.\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu")
+             await message.delete()
+             await asyncio.sleep(180)
+             await gin.delete()
+            
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
@@ -205,7 +245,18 @@ async def mana_cmd(client: Client, message: Message):
          ser = message.from_user.username
          await message.reply_text(f"@{ser}, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
          await message.delete()
-
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Anikatsu"))
+async def mana_cmd(client: Client, message: Message):
+      
+         ser = message.from_user.username
+         await message.reply_text(f"@{ser}, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
+         await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Saikou"))
+async def mana_cmd(client: Client, message: Message):
+      
+         ser = message.from_user.username
+         await message.reply_text(f"@{ser}, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
+         await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("9anime"))
 async def mana_cmd(client: Client, message: Message):
       
