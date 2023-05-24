@@ -49,7 +49,7 @@ async def mana_cmd(client: Client, message: Message):
       except:
           pass
 
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to","Zoro.pm","Zoroanime.net","Zoro.sx","Zoro.moe"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"|"Zoro.pm"|"Zoroanime.net"|"Zoro.sx"|"Zoro.moe"))
 async def mana_cmd(client: Client, message: Message):
       try:
          ser = message.from_user.username
