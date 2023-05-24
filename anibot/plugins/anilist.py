@@ -40,12 +40,13 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
-@anibot.on_message(filters.chat(-1001944303479))
+@anibot.on_message(filters.chat(-1001944303479) & filters.text)
 async def mana_cmd(client: Client, message: Message):
 
-         ser = message.from_user.first_name
+         ser = str(message.from_user.first_name)
          k = "Ginko"
-         if ser is k:
+         if ser==k:
+             await message.reply_text(f"Ginko Spotted")
              await message.delete()
          
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
