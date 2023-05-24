@@ -44,9 +44,10 @@ no_pic = [
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.first_name
-         if ser == "Ginko":
+         k = "Ginko"
+         if ser is k:
              await message.delete()
-            
+         
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
