@@ -1417,7 +1417,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Ginko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
@@ -1437,7 +1437,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "GINKO"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
@@ -1452,7 +1452,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "gin-ko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
@@ -1467,7 +1467,7 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          k = "Gin-ko"
          hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})
+         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu})"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
                                                               "☠️BAN GINKO", url=ginlink)]])
