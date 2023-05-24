@@ -40,6 +40,13 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
+@anibot.on_message(filters.chat(-1001944303479))
+async def mana_cmd(client: Client, message: Message):
+
+         ser = message.from_user.first_name
+         if ser == "Ginko":
+             await message.delete()
+            
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
@@ -130,9 +137,6 @@ async def mana_cmd(client: Client, message: Message):
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Goku.to"))
 
 async def mana_cmd(client: Client, message: Message):
-
-      
-
          ser = message.from_user.username
 
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
