@@ -323,7 +323,7 @@ async def mana_cmd(client: Client, message: Message):
          sr = message.from_user.username
          zex = await message.reply_text(f"@{sr}, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
-      except:
+      except:
           pass
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("4anime"))
 async def mana_cmd(client: Client, message: Message):
