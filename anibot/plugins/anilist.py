@@ -48,6 +48,7 @@ async def mana_cmd(client: Client, message: Message):
          kaze = await message.delete()
       except:
           pass
+        
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.pm"))
 async def mana_cmd(client: Client, message: Message):
       try:
