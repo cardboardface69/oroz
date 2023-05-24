@@ -1,5 +1,4 @@
 # base code was taken from @DeletedUser420's Userge-Plugins repo
-# originally authored by Phyco-Ninja (https://github.com/Phyco-Ninja) (@PhycoNinja13b)
 # I've just tweaked his file a bit (maybe a lot)
 # But i sticked to the result format he used which looked cool
 
@@ -44,19 +43,20 @@ no_pic = [
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
       try:
-         kaze = await message.delete()
          ser = message.from_user.username
-         zex = await client.send_message(chat_id = message.chat.id, text=f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
-      except:
+         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
+         kaze = await message.delete()
+    except:
           pass
+
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.to"))
 async def mana_cmd(client: Client, message: Message):
       try:
+         ser = message.from_user.username
+         zex = await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
          kaze = await message.delete()
-         zex = await client.send_message(chat_id = message.chat.id, text="Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**")
-      except:
+    except:
           pass
-        
 @anibot.on_message(filters.command(["manga", f"manga{BOT_NAME}"], prefixes=trg))
 @control_user
 async def manga_cmd(client: Client, message: Message, mdata: dict):
