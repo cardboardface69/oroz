@@ -7,6 +7,7 @@
 
 import asyncio
 import requests
+from natsort import natsorted
 import time
 import random
 import re
