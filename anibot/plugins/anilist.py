@@ -458,7 +458,12 @@ async def mana_cmd(client: Client, message: Message):
       
 
 
-        
+@anibot.on_message(filters.chat(-1001944303479) & filters.command(["help", f"manga{BOT_NAME}"], prefixes=trg))
+async def mana_cmd(client: Client, message: Message):
+         repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
+
+                                                       "HELP", url="https://t.me/zorolostbot?start=help)]])
+         await message.reply_text(f"Click below button for bot help.", reply_markup=repl_markup)     
 @anibot.on_message(filters.command(["manga", f"manga{BOT_NAME}"], prefixes=trg))
 @control_user
 async def manga_cmd(client: Client, message: Message, mdata: dict):
@@ -615,87 +620,7 @@ async def mangareader_cmd(client: Client, message: Message, mdata: dict):
     if pic not in PIC_LS:
        PIC_LS.append(pic)
 
-@anibot.on_message(filters.command(['help', f'help{BOT_NAME}'], prefixes=trg))
-@control_user
-async def help_(client: anibot, message: Message, mdata: dict):
-    gid = mdata['chat']['id']
-    find_gc = await DC.find_one({'_id': gid})
-    if find_gc is not None and 'help' in find_gc['cmd_list'].split():
-        return
-    bot_us = (await client.get_me()).username
-    try:
-        id_ = mdata['from_user']['id']
-    except KeyError:
-        await client.send_message(
-            gid,
-            text="Click below button for bot help",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Help", url=f"https://t.me/{bot_us}/?start=help")]])
-        )
-        return
-    buttons = help_btns(id_)
-    text='''This is a small guide on how to use me\n\n**Basic Commands:**\nUse /ping or !ping cmd to check if bot is online
-Use /start or !start cmd to start bot in group or pm
-Use /help or !help cmd to get interactive help on available bot cmds
-Use /feedback cmd to contact bot owner'''
-    if id_ in OWNER:
-        await client.send_message(gid, text=text, reply_markup=buttons)
-        await client.send_message(
-            gid,
-            text="""Owners or Sudos can also use
 
-- __/term__ `to run a cmd in terminal`
-- __/eval__ `to run a python code (code must start right after cmd like `__/eval print('UwU')__`)`
-- __/stats__ `to get stats on bot like no. of users, grps and authorised users`
-- __/dbcleanup__ `to remove obsolete/useless entries in database`
-
-Apart from above shown cmds"""
-        )
-    else:
-        if gid==id_:
-            await client.send_message(gid, text=text, reply_markup=buttons)
-        else:
-            await client.send_message(
-                gid,
-                text="Click below button for bot help",
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Help", url=f"https://t.me/{bot_us}/?start=help")]])
-            )
-
-
-@anibot.on_callback_query(filters.regex(pattern=r"help_(.*)"))
-@check_user
-async def help_dicc_parser(client: anibot, cq: CallbackQuery, cdata: dict):
-    await cq.answer()
-    kek, qry, user = cdata['data'].split("_")
-    text = HELP_DICT[qry]
-    btn = InlineKeyboardMarkup([[InlineKeyboardButton("Back", callback_data=f"hlplist_{user}")]])
-    await cq.edit_message_text(text=text, reply_markup=btn)
-
-
-@anibot.on_callback_query(filters.regex(pattern=r"hlplist_(.*)"))
-@check_user
-async def help_list_parser(client: anibot, cq: CallbackQuery, cdata: dict):
-    await cq.answer()
-    user = cdata['data'].split("_")[1]
-    buttons = help_btns(user)
-    text='''This is a small guide on how to use me\n\n**Basic Commands:**\nUse /ping or !ping cmd to check if bot is online
-Use /start or !start cmd to start bot in group or pm
-Use /help or !help cmd to get interactive help on available bot cmds
-Use /feedback cmd to contact bot owner'''
-    await cq.edit_message_text(text=text, reply_markup=buttons)
-
-
-def help_btns(user):
-    but_rc = []
-    buttons = []
-    hd_ = list(natsorted(HELP_DICT.keys()))
-    for i in hd_:
-        but_rc.append(InlineKeyboardButton(i, callback_data=f"help_{i}_{user}"))
-        if len(but_rc)==2:
-            buttons.append(but_rc)
-            but_rc = []
-    if len(but_rc)!=0:
-        buttons.append(but_rc)
-    return InlineKeyboardMarkup(buttons)
 
 @anibot.on_message(filters.command(["character", f"character{BOT_NAME}"], prefixes=trg))
 @control_user
