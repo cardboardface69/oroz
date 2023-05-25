@@ -17,7 +17,7 @@ import urllib.request
 from pyrogram.errors import UserNotParticipant
 from .. import ANILIST_CLIENT, ANILIST_REDIRECT_URL, ANILIST_SECRET, OWNER, TRIGGERS as trg, BOT_NAME, anibot
 from ..utils.data_parser import (
-    get_all_genres, get_all_tags, get_scheduled, get_top_animes, get_user_activity, get_user_favourites, toggle_favourites,
+    get_all_genres, search_filler, parse_filler, get_all_tags, get_scheduled, get_top_animes, get_user_activity, get_user_favourites, toggle_favourites,
     get_anime, get_airing, get_anilist, get_character, get_additional_info, get_manga, browse_,
     get_featured_in_lists, update_anilist, get_user, ANIME_DB, MANGA_DB, CHAR_DB, AIRING_DB, GUI
 )
@@ -40,7 +40,64 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
-            
+
+FILLERS = {}
+DC = get_collection('DISABLED_CMDS')
+
+@anibot.on_message(filters.command(['fillers', f"fillers{BOT_NAME}"], prefixes=trg))
+@control_user
+async def fillers_cmd(client: anibot, message: Message, mdata: dict):
+    find_gc = await DC.find_one({'_id': mdata['chat']['id']})
+    if find_gc is not None and 'watch' in find_gc['cmd_list'].split():
+        return
+    qry = mdata['text'].split(" ", 1)
+    if len(qry)==1:
+        return await message.reply_text("Give some anime name to search fillers for\nexample: /fillers Detective Conan")
+    k = search_filler(qry[1])
+    if k == {}:
+        await message.reply_text("No fillers found for the given anime...")
+        return
+    button = []
+    list_ = list(k.keys())
+    if len(list_)==1:
+        result = parse_filler(k.get(list_[0]))
+        msg = ""
+        msg += f"Fillers for anime `{list_[0]}`\n\nManga Canon episodes:\n"
+        msg += str(result.get("total_ep"))
+        msg += "\n\nMixed/Canon fillers:\n"
+        msg += str(result.get("mixed_ep"))
+        msg += "\n\nFillers:\n"
+        msg += str(result.get("filler_ep"))
+        if result.get("ac_ep") is not None:
+            msg += "\n\nAnime Canon episodes:\n"
+            msg += str(result.get("ac_ep"))
+        await message.reply_text(msg)
+        return
+    for i in list_:
+        fl_js = rand_key()
+        FILLERS[fl_js] = [k.get(i), i]
+        button.append([InlineKeyboardButton(i, callback_data=f"fill_{fl_js}_{mdata['from_user']['id']}")])
+    await message.reply_text("Pick anime you want to see fillers list for:", reply_markup=InlineKeyboardMarkup(button))
+
+
+@anibot.on_callback_query(filters.regex(pattern=r"fill_(.*)"))
+@check_user
+async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
+    kek, req, user = cdata['data'].split("_")
+    result = parse_filler((FILLERS.get(req))[0])
+    msg = ""
+    msg += f"**Fillers for anime** `{(FILLERS.get(req))[1]}`\n\n**Manga Canon episodes:**\n"
+    msg += str(result.get("total_ep"))
+    msg += "\n\n**Mixed/Canon fillers:**\n"
+    msg += str(result.get("mixed_ep"))
+    msg += "\n\n**Fillers:**\n"
+    msg += str(result.get("filler_ep"))
+    if result.get("ac_ep") is not None:
+        msg += "\n\n**Anime Canon episodes:**\n"
+        msg += str(result.get("ac_ep"))
+    fillerx = await cq.edit_message_text(msg)
+    await asyncio.sleep(180)
+    return await fillerx.delete()           
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
