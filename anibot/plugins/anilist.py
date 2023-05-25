@@ -462,7 +462,7 @@ async def mana_cmd(client: Client, message: Message):
 async def mana_cmd(client: Client, message: Message):
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
 
-                                                       "HELP", url="https://t.me/zorolostbot?start=help)]])
+                                                       "HELP", url="https://t.me/zorolostbot?start=help")]])
          await message.reply_text(f"Click below button for bot help.", reply_markup=repl_markup)     
 @anibot.on_message(filters.command(["manga", f"manga{BOT_NAME}"], prefixes=trg))
 @control_user
