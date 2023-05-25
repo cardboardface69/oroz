@@ -495,8 +495,7 @@ async def mangareader_cmd(client: Client, message: Message, mdata: dict):
                 )                                    
     if pic not in PIC_LS:
        PIC_LS.append(pic)
-    await asyncio.sleep(180)
-    return await mangar.delete()
+
 
 @anibot.on_message(filters.command(["character", f"character{BOT_NAME}"], prefixes=trg))
 @control_user
