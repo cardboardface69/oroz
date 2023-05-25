@@ -18,7 +18,7 @@ from pyrogram.errors import UserNotParticipant
 from .. import ANILIST_CLIENT, ANILIST_REDIRECT_URL, ANILIST_SECRET, OWNER, TRIGGERS as trg, BOT_NAME, anibot
 from ..utils.data_parser import (
     get_all_genres, search_filler, parse_filler, get_all_tags, get_scheduled, get_top_animes, get_user_activity, get_user_favourites, toggle_favourites,
-    get_anime, get_airing, get_anilist, get_character, get_additional_info, get_manga, browse_,
+    get_anime, get_airing, get_anilist, get_character, get_wo, get_wols, get_additional_info, get_manga, browse_,
     get_featured_in_lists, update_anilist, get_user, ANIME_DB, MANGA_DB, CHAR_DB, AIRING_DB, GUI
 )
 from ..utils.helper import ANON_JSON, check_user, get_btns, AUTH_USERS, rand_key, clog, control_user, PIC_LS
@@ -40,7 +40,68 @@ no_pic = [
     'https://telegra.ph/file/b5eb1e3606b7d2f1b491f.jpg'
 ]
 
+DC = get_collection('DISABLED_CMDS')
 
+
+@anibot.on_message(filters.command(["watch", f"watch{BOT_NAME}"], prefixes=trg))
+@control_user
+async def get_watch_order(client: anibot, message: Message, mdata: dict):
+    """Get List of Scheduled Anime"""
+    gid = mdata['chat']['id']
+    find_gc = await DC.find_one({'_id': gid})
+    if find_gc is not None and 'watch' in find_gc['cmd_list'].split():
+        return
+    x = message.text.split(" ", 1)
+    if len(x)==1:
+        await message.reply_text("Nothing given to search for!!!")
+        return
+    user = mdata['from_user']['id']
+    data = get_wols(x[1])
+    msg = f"Found related animes for the query {x[1]}"
+    buttons = []
+    if data == []:
+        await client.send_message(gid, 'No results found!!!')
+        return
+    for i in data:
+        buttons.append([InlineKeyboardButton(str(i[1]), callback_data=f"watch_{i[0]}_{x[1]}_0_{user}")])
+    await message.reply_text(msg, reply_markup=InlineKeyboardMarkup(buttons))
+
+
+@anibot.on_callback_query(filters.regex(pattern=r"watch_(.*)"))
+@check_user
+async def watch_(client: anibot, cq: CallbackQuery, cdata: dict):
+    kek, id_, qry, req, user = cdata['data'].split("_")
+    msg, total = get_wo(int(id_), int(req))
+    totalpg, lol = divmod(total, 50)
+    button = []
+    if lol!=0:
+        totalpg + 1
+    if total>50:
+        if int(req)==0:
+            button.append([InlineKeyboardButton(text="Next", callback_data=f"{kek}_{id_}_{qry}_{int(req)+1}_{user}")])
+        elif int(req)==totalpg:
+            button.append([InlineKeyboardButton(text="Prev", callback_data=f"{kek}_{id_}_{qry}_{int(req)-1}_{user}")])
+        else:
+            button.append(
+                [
+                    InlineKeyboardButton(text="Prev", callback_data=f"{kek}_{id_}_{qry}_{int(req)-1}_{user}"),
+                    InlineKeyboardButton(text="Next", callback_data=f"{kek}_{id_}_{qry}_{int(req)+1}_{user}")
+                ]
+            )
+    button.append([InlineKeyboardButton("Back", callback_data=f"wol_{qry}_{user}")])
+    await cq.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(button))
+
+
+@anibot.on_callback_query(filters.regex(pattern=r"wol_(.*)"))
+@check_user
+async def wls(client: anibot, cq: CallbackQuery, cdata: dict):
+    kek, qry, user = cdata['data'].split("_")
+    data = get_wols(qry)
+    msg = f"Found related animes for the query {qry}"
+    buttons = []
+    for i in data:
+        buttons.append([InlineKeyboardButton(str(i[1]), callback_data=f"watch_{i[0]}_{qry}_0_{user}")])
+    await cq.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons))
 FILLERS = {}
 DC = get_collection('DISABLED_CMDS')
 
