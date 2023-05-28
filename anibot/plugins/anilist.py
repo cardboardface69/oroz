@@ -4,7 +4,6 @@
 
 """ Search for Anime related Info using Anilist API """
 
-
 import asyncio
 import requests
 from natsort import natsorted
