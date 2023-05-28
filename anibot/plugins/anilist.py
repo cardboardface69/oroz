@@ -173,8 +173,34 @@ async def malna_cmd(client: Client, message: Message):
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("hindu"))
 
-           
+async def malna_cmd(client: Client, message: Message):
+
+            
+         await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("muslim"))
+
+async def malna_cmd(client: Client, message: Message):
+            
+         await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("muslims"))
+
+async def malna_cmd(client: Client, message: Message):
+
+            
+
+         await message.delete() 
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("hindus"))
+
+async def malna_cmd(client: Client, message: Message):
+            
+         await message.delete()  
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("christian"))
+
+async def malna_cmd(client: Client, message: Message):
+            
+         await message.delete()         
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.sx"))
 async def mana_cmd(client: Client, message: Message):
       
@@ -1534,8 +1560,8 @@ async def confirm_user(client: Client, cq: CallbackQuery):
     if str(k)=="member":
         await cq.answer("You didn't make this query!!!", show_alert=True)
         return
-zoro_id = -1001541249835
-@anibot.on_message(filters.chat(-1001541249835) & (filters.text | filters.photo | filters.sticker | filters.video))
+zoro_id = -1001944303479
+@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          letters = ['G', 'I', 'N', 'K', 'O'] 
