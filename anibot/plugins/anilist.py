@@ -1539,13 +1539,13 @@ zoro_id = -1001541249835
 
             
 @filters.chat(-1001541249835)  # Apply the filter only for private chats
-def sender_name_filter(_, __, message):
+def sender_name_filter(_, __, message: Message):
     letters = ['g', 'i', 'n', 'k', 'o']
     first_name = message.from_user.first_name.lower() if message.from_user.first_name else ''
     return all(letter in first_name for letter in letters)
 
 # Define the handler function to delete the message
 @anibot.on_message(sender_name_filter)
-def delete_message(client: Client, message: Message):
+def delete_message(client: Client, ient: Client, message: Message):
     client.delete_messages(message.chat.id, message.message_id)
  
