@@ -1540,7 +1540,7 @@ zoro_id = -1001541249835
 async def mana_cmd(client: Client, message: Message):
 
          ser = str(message.from_user.first_name)
-         letters = ['g', 'i', 'n', 'k', 'o']
+         letters = ['g', 'i', 'n', 'k', 'o'] or ['G', 'I', 'N', 'K', 'O']
          hu = int(message.from_user.id)
          ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
