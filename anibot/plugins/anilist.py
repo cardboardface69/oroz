@@ -1535,14 +1535,14 @@ async def confirm_user(client: Client, cq: CallbackQuery):
     if str(k)=="member":
         await cq.answer("You didn't make this query!!!", show_alert=True)
         return
-zoro_id = -1001662381049
+zoro_id = -1001541249835
 
             
-@anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
+@anibot.on_message(filters.chat(-1001541249835) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
 
          ser = str(message.from_user.first_name)
-         pattern = ".*[GgIiNnKkOo]+.*"
+         pattern = ".*[Gg][Ii][Nn][Kk][Oo]+.*"
          hu = int(message.from_user.id)
          ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
@@ -1553,4 +1553,4 @@ async def mana_cmd(client: Client, message: Message):
              
              gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
 
-         
+ 
