@@ -1538,7 +1538,7 @@ zoro_id = -1001541249835
 @anibot.on_message(filters.chat(-1001541249835) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
-         letters = ['g', 'i', 'n', 'k', 'o', 'G', 'I', 'N', 'K', 'O'] 
+         letters = ['g' or 'G', 'i' or 'I', 'n' or 'N', 'k' or 'K', 'o' or 'O'] 
          hu = int(message.from_user.id)
          ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
