@@ -1538,19 +1538,14 @@ async def confirm_user(client: Client, cq: CallbackQuery):
 zoro_id = -1001541249835
 
             
-@anibot.on_message(filters.chat(-1001541249835) & (filters.text | filters.photo | filters.sticker | filters.video))
-async def mana_cmd(client: Client, message: Message):
+@filters.chat(-1001541249835)  # Apply the filter only for private chats
+def sender_name_filter(_, __, message):
+    letters = ['g', 'i', 'n', 'k', 'o']
+    first_name = message.from_user.first_name.lower() if message.from_user.first_name else ''
+    return all(letter in first_name for letter in letters)
 
-         ser = str(message.from_user.first_name)
-         pattern = ".[^\w](?i)g(?-i)[^\w](?i)i(?-i)[^\w](?i)n(?-i)[^\w](?i)k(?-i)[^\w](?i)o(?-i)[^\w]."
-         hu = int(message.from_user.id)
-         ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
-         repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
-
-                                                              "☠️BAN GINKO", url=ginlink)]])
-         if re.match(pattern, ser):
-             await message.delete()
-             
-             gin = await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
-
+# Define the handler function to delete the message
+@anibot.on_message(sender_name_filter)
+def delete_message(client: Client, message: Message):
+    client.delete_messages(message.chat.id, message.message_id)
  
