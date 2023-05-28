@@ -1540,6 +1540,12 @@ async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
          letters = ['G', 'I', 'N', 'K', 'O'] 
          lettersx = ['g', 'i', 'n', 'k', 'o']
+         lettersz = ['G', 'i', 'n', 'k', 'o']
+         lettersk = ['g', 'I', 'n', 'k', 'o']
+         lettersn = ['G', 'I', 'N', 'k', 'o']
+         lettersy = ['G', 'i', 'n', 'K', 'o']
+         lettersj = ['G', 'I', 'N', 'K', 'o']
+         lettersd = ['G', 'I', 'N', 'K', '0']
          hu = int(message.from_user.id)
          ginlink = f"https://telegram.me/share/url?url=/ban%20{hu}"
          repl_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
@@ -1550,6 +1556,34 @@ async def mana_cmd(client: Client, message: Message):
           
              await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
          elif all(letter in ser for letter in lettersx):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+          elif all(letter in ser for letter in lettersz):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+          elif all(letter in ser for letter in lettersm):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+          elif all(letter in ser for letter in lettersy):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+          elif all(letter in ser for letter in lettersk):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+          elif all(letter in ser for letter in lettersn):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+           elif all(letter in ser for letter in lettersd):
+               
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+           elif all(letter in ser for letter in lettersj):
                
              await message.delete()
              await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
