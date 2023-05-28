@@ -1549,9 +1549,9 @@ async def mana_cmd(client: Client, message: Message):
              await message.delete()
           
              await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
-            elif all(letter in ser for letter in lettersx):
+         elif all(letter in ser for letter in lettersx):
                
-                await message.delete()
-                await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
+             await message.delete()
+             await client.send_message(zoro_id, f"⚠Alert!\n Ginko has appeared on chat.\nSend below text [here](https://t.me/c/1944303479/1) to ban the user\n `/ban {hu}` \n\n@Einsteinhere @Kunaru_Kun @BlizzardVale @Yourveldora @Luminusu",reply_markup=repl_markup)
           
                 
