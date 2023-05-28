@@ -1537,7 +1537,6 @@ async def confirm_user(client: Client, cq: CallbackQuery):
 zoro_id = -1001541249835
 @anibot.on_message(filters.chat(-1001541249835) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
-
          ser = str(message.from_user.first_name)
          letters = ['g', 'i', 'n', 'k', 'o', 'G', 'I', 'N', 'K', 'O'] 
          hu = int(message.from_user.id)
