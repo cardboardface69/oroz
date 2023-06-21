@@ -277,7 +277,7 @@ async def mana_cmd(client: Client, message: Message):
     
 
  
-@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("Mangareader.to"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Mangareader.to"))
 async def mana_cmd(client: Client, message: Message):
     
          ser = message.from_user.username
