@@ -159,13 +159,14 @@ async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
     fillerx = await cq.edit_message_text(msg)
     await asyncio.sleep(180)
     return await fillerx.delete()           
+ADMIN = [1535813080, 149334579, 1874293288, 1468855699, 2109830713, 59714451044, 5258228429, 1443454117]  
 @anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
-ADMIN=[1535813080,1493345791874293288,1468855699,2109830713,59714451044,5258228429,1443454117]     
+   
 @anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoro.pm"))
 async def malna_cmd(client: Client, message: Message):      
          ser = message.from_user.username
