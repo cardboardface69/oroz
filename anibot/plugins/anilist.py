@@ -159,25 +159,21 @@ async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
     fillerx = await cq.edit_message_text(msg)
     await asyncio.sleep(180)
     return await fillerx.delete()           
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.to"))
+@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
-
-        
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.pm"))
-async def malna_cmd(client: Client, message: Message):
-      
+ADMIN=[1535813080,1493345791874293288,1468855699,2109830713,59714451044,5258228429,1443454117]     
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoro.pm"))
+async def malna_cmd(client: Client, message: Message):      
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("hindu"))
 
-async def malna_cmd(client: Client, message: Message):
-
-            
+async def malna_cmd(client: Client, message: Message):            
          await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("muslim"))
 
@@ -187,9 +183,6 @@ async def malna_cmd(client: Client, message: Message):
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("muslims"))
 
 async def malna_cmd(client: Client, message: Message):
-
-            
-
          await message.delete() 
 @anibot.on_message(filters.chat(-1001944303479) & filters.regex("hindus"))
 
@@ -201,14 +194,14 @@ async def malna_cmd(client: Client, message: Message):
 async def malna_cmd(client: Client, message: Message):
             
          await message.delete()         
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoro.sx"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoro.sx"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Zoroanime.net"))
+@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("Zoroanime.net"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
@@ -284,7 +277,7 @@ async def mana_cmd(client: Client, message: Message):
     
 
  
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("Mangareader.to"))
+@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("Mangareader.to"))
 async def mana_cmd(client: Client, message: Message):
     
          ser = message.from_user.username
