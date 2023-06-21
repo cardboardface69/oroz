@@ -159,7 +159,7 @@ async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
     fillerx = await cq.edit_message_text(msg)
     await asyncio.sleep(180)
     return await fillerx.delete()           
-@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("zoro.to"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("zoro.to"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
