@@ -201,7 +201,7 @@ async def mana_cmd(client: Client, message: Message):
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
-@anibot.on_message(filters.chat(-1001944303479) &  & ~filters.user(ADMIN) & filters.regex("Zoroanime.net"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoroanime.net"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
