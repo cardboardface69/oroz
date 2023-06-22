@@ -1554,7 +1554,7 @@ async def confirm_user(client: Client, cq: CallbackQuery):
     if str(k)=="member":
         await cq.answer("You didn't make this query!!!", show_alert=True)
         return
-zoro_id = -1001944303479
+zoro_id = -1001662381049
 @anibot.on_message(filters.chat(-1001944303479) & (filters.text | filters.photo | filters.sticker | filters.video))
 async def mana_cmd(client: Client, message: Message):
          ser = str(message.from_user.first_name)
