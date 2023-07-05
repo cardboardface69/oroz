@@ -245,7 +245,7 @@ async def mana_cmd(client: Client, message: Message):
          await message.delete()
       
 
-@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("zoro.pm"))
+@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("Zoro.vc"))
 
 async def mana_cmd(client: Client, message: Message):
 
@@ -388,7 +388,7 @@ async def mana_cmd(client: Client, message: Message):
          await message.reply_text(f"@{ser}, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
          await message.delete()
       
-@anibot.on_message(filters.chat(-1001944303479) & filters.regex("animebee"))
+@anibot.on_message(filters.chat(-1001944303479) & filters.regex("zoro.vc"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
