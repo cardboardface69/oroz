@@ -5,6 +5,7 @@
 """ Search for Anime related Info using Anilist API """
 
 import asyncio
+import random
 import requests
 from natsort import natsorted
 import time
@@ -105,6 +106,12 @@ async def wls(client: anibot, cq: CallbackQuery, cdata: dict):
 FILLERS = {}
 DC = get_collection('DISABLED_CMDS')
 
+@app.on_message(filters.command(['random', f"random{BOT_NAME}"], prefixes=trg))
+async def handle_message(client: Client, message: Message): 
+    rnx = random.randrange(0,10000)
+    sax = f"https://pic.re/image/{rnx}"
+    await message.reply_photo(sax)
+    
 @anibot.on_message(filters.command(['fillers', f"fillers{BOT_NAME}"], prefixes=trg))
 @control_user
 async def fillers_cmd(client: anibot, message: Message, mdata: dict):
