@@ -106,7 +106,7 @@ async def wls(client: anibot, cq: CallbackQuery, cdata: dict):
 FILLERS = {}
 DC = get_collection('DISABLED_CMDS')
 
-@app.on_message(filters.command(['random', f"random{BOT_NAME}"], prefixes=trg))
+@anibot.on_message(filters.command(['random', f"random{BOT_NAME}"], prefixes=trg))
 async def handle_message(client: Client, message: Message): 
     rnx = random.randrange(0,10000)
     sax = f"https://pic.re/image/{rnx}"
