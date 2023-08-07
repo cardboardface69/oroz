@@ -6,6 +6,7 @@
 
 import asyncio
 import random
+import base64
 import requests
 from natsort import natsorted
 import time
@@ -110,7 +111,25 @@ DC = get_collection('DISABLED_CMDS')
 async def handle_message(client: Client, message: Message): 
     rnx = random.randrange(0,10000)
     sax = f"https://pic.re/image/{rnx}"
-    await message.reply_photo(sax)
+    sugi = await message.reply_photo(sax)
+    await asyncio.sleep(120)
+    return await sugi.delete()
+
+@anibot.on_message(filters.command(['imagine', f"imagine{BOT_NAME}"], prefixes=trg))
+async def handle_message(client: Client, message: Message):
+    taku = await message.reply_text("Imagining...")
+    bing = " ".join(message.command[1:])
+    sux = f"https://api.safone.me/imagine?text={bing}"
+    responsez = requests.get(sux)
+    fuk = responsez.json()
+    pho = fuk['image']
+    sdf = ''.join(pho)
+    b64dec = base64.b64decode(sdf)
+    with open('image.jpg', 'wb') as file:
+        file.write(b64dec)
+    with open('image.jpg', 'rb') as file:
+        await message.reply_photo(message.chat.id, photo=file)
+        await taku.delete()
     
 @anibot.on_message(filters.command(['fillers', f"fillers{BOT_NAME}"], prefixes=trg))
 @control_user
@@ -164,8 +183,7 @@ async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
         msg += "\n\n**Anime Canon episodes:**\n"
         msg += str(result.get("ac_ep"))
     fillerx = await cq.edit_message_text(msg)
-    await asyncio.sleep(180)
-    return await fillerx.delete()           
+    await asyncio.sleep(180)          
 ADMIN = [1535813080, 149334579, 1874293288, 1468855699, 2109830713, 59714451044, 5258228429, 1443454117]  
 @anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex(pattern=r"\bzoro\.to\b"))
 async def mana_cmd(client: Client, message: Message):
