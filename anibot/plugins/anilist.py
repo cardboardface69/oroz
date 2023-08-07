@@ -128,7 +128,7 @@ async def handle_message(client: Client, message: Message):
     with open('image.jpg', 'wb') as file:
         file.write(b64dec)
     with open('image.jpg', 'rb') as file:
-        await message.reply_photo(message.chat.id, photo=file)
+        await message.reply_photo(file)
         await taku.delete()
     
 @anibot.on_message(filters.command(['fillers', f"fillers{BOT_NAME}"], prefixes=trg))
