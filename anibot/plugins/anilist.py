@@ -164,7 +164,7 @@ async def process_queue():
         
         await next_command.reply_media_group(
             media=media_group,
-            reply_to_message_id=next_command.message_id
+            reply_to_message_id=next_command.id
         )
         
         # Clean up temporary files
