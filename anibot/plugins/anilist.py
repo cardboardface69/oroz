@@ -115,21 +115,69 @@ async def handle_message(client: Client, message: Message):
     await asyncio.sleep(120)
     return await sugi.delete()
 
-@anibot.on_message(filters.command(['imagine', f"imagine{BOT_NAME}"], prefixes=trg))
-async def handle_message(client: Client, message: Message):
-    taku = await message.reply_text("Imagining...")
-    bing = " ".join(message.command[1:])
-    sux = f"https://api.safone.me/imagine?text={bing}"
-    responsez = requests.get(sux)
-    fuk = responsez.json()
-    pho = fuk['image']
-    sdf = ''.join(pho)
-    b64dec = base64.b64decode(sdf)
-    with open('image.jpg', 'wb') as file:
-        file.write(b64dec)
-    with open('image.jpg', 'rb') as file:
-        await message.reply_photo(file)
+command_queue = asyncio.Queue()
+processing = False  # Flag to indicate if a process is ongoing
+
+@anibot.on_message(filters.command("imagine"))
+async def handle_message(client, message):
+    global processing
+    
+    if processing:
+        tk = await message.reply_text("Your request is in queue.")
+        await command_queue.put(message)
+        await asyncio.sleep(15)
+        await tk.delete()
+    else:
+        await command_queue.put(message)
+        await process_queue()
+
+async def process_queue():
+    global processing
+    
+    while not command_queue.empty():
+        processing = True
+        next_command = await command_queue.get()
+        taku = await next_command.reply_text("Imagining...")
+        
+        bing = " ".join(next_command.command[1:])
+        sux = f"https://api.safone.me/imagine?text={bing}&version=1"
+        responsez = requests.get(sux)
+        fuk = responsez.json()
+        
+        pho_list = fuk['image']  # Get the list of images directly
+        
+        media_group = []
+        temp_files = []  # To keep track of temporary files
+        
+        for idx, pho in enumerate(pho_list):
+            sdf = ''.join(pho)
+            b64dec = base64.b64decode(sdf)
+            
+            # Create a temporary file to hold the image data
+            temp_filename = f"image{idx}.jpg"
+            temp_files.append(temp_filename)
+            
+            with open(temp_filename, 'wb') as file:
+                file.write(b64dec)
+            
+            media_group.append(InputMediaPhoto(media=temp_filename, caption=f"image {idx + 1}"))
+        
+        await next_command.reply_media_group(
+            media=media_group,
+            reply_to_message_id=next_command.message_id
+        )
+        
+        # Clean up temporary files
+        for temp_file in temp_files:
+            os.remove(temp_file)
+        
         await taku.delete()
+        
+        processing = False
+
+@app.on_message(filters.private)
+async def handle_private_message(client, message):
+    await process_queue()
     
 @anibot.on_message(filters.command(['fillers', f"fillers{BOT_NAME}"], prefixes=trg))
 @control_user
