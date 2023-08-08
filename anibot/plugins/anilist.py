@@ -175,7 +175,7 @@ async def process_queue():
         
         processing = False
 
-@app.on_message(filters.private)
+@anibot.on_message(filters.private)
 async def handle_private_message(client, message):
     await process_queue()
     
