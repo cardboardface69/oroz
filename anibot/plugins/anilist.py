@@ -119,7 +119,7 @@ command_queue = asyncio.Queue()
 processing = False  # Flag to indicate if a process is ongoing
 
 @anibot.on_message(filters.command("imagine"))
-async def handle_message(client, message):
+async def handle_message(client: Client, message: Message): 
     global processing
     
     if processing:
