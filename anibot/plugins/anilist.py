@@ -250,6 +250,7 @@ blacklist = [
     "Bato",
     "Comick",
     "gogo",
+    "zorox.to",
     "goku.com",
     "h4anime",
     "hanime",
@@ -278,7 +279,7 @@ blacklist = [
 @anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("(" + "|".join(blacklist) + ")"))
 async def handle_blacklisted_content(client: Client, message: Message):
     user_username = message.from_user.username
-    await message.reply_text(f"@{user_username}, Please refrain from sharing links or content related to blacklisted websites or using restricted terms to comply with Telegram's Terms of Service.")
+    await message.reply_text(f"@{user_username}, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service**.")
     await message.delete()
 @anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("999hentai"))
 async def mana_cmd(client: Client, message: Message):
