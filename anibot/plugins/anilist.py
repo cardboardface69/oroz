@@ -169,14 +169,14 @@ async def filler_btn(client: anibot, cq: CallbackQuery, cdata: dict):
     fillerx = await cq.edit_message_text(msg)
     await asyncio.sleep(180)          
 ADMIN = [1535813080, 149334579, 1874293288, 1468855699, 2109830713, 59714451044, 5258228429, 1443454117]  
-@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex(pattern=r"\bzoro\.to\b"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex(pattern=r"\baniwatch\.to\b"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
    
-@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoro.pm"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("aniwatch.nz"))
 async def malna_cmd(client: Client, message: Message):      
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
@@ -204,39 +204,87 @@ async def malna_cmd(client: Client, message: Message):
 async def malna_cmd(client: Client, message: Message):
             
          await message.delete()         
-@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoro.sx"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("aniwatch.se"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
 
-@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("Zoroanime.net"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("aniwatchtv.to"))
 async def mana_cmd(client: Client, message: Message):
 
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          kaze = await message.delete()
       
-@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("zoro.sx"))
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("aniwatch.me"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
-@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("zoroanime.net"))
+@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("mangareader.to"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
          await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
          await message.delete()
       
-@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("Zoro.moe"))
+# Define the blacklist of words and website domains
+blacklist = [
+    "4ani",
+    "6ani.me",
+    "9anime",
+    "999hentai",
+    "9ani",
+    "anicrush.to",
+    "animekisa",
+    "animebee",
+    "animeflix",
+    "animepahe",
+    "animesuge",
+    "aniwave",
+    "AsuraScans",
+    "Bato",
+    "Comick",
+    "gogo",
+    "goku.com",
+    "h4anime",
+    "hanime",
+    "Jnovels",
+    "kaido.to",
+    "kissanime",
+    "Manga4Life",
+    "MangaBuddy",
+    "MangaDex",
+    "MangaFire",
+    "MangaKakalot",
+    "MangaLife",
+    "mangareader.to",
+    "Mangasee",
+    "manhwa18",
+    "marin.moe",
+    "nhentai",
+    "piracy.moe",
+    "shiro",
+    "TCBScans",
+    "anix.to",
+    "anix",
+]
+
+# Implement the message filter to detect and handle prohibited content
+@anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("(" + "|".join(blacklist) + ")"))
+async def handle_blacklisted_content(client: Client, message: Message):
+    user_username = message.from_user.username
+    await message.reply_text(f"@{user_username}, Please refrain from sharing links or content related to blacklisted websites or using restricted terms to comply with Telegram's Terms of Service.")
+    await message.delete()
+@anibot.on_message(filters.chat(-1001944303479) &  ~filters.user(ADMIN) & filters.regex("999hentai"))
 async def mana_cmd(client: Client, message: Message):
       
          ser = message.from_user.username
-         await message.reply_text(f"**@{ser}**, Unfortunately forwarding any links of our website will be deleted as to not violate any **Telegram Terms of Service**.")
+         await message.reply_text(f"**@{ser}**, Refrain from forwarding any links of 3rd party websites, they will be deleted as to not violate any **Telegram Terms of Service.**")
          await message.delete()
 
 @anibot.on_message(filters.chat(-1001944303479) & ~filters.user(ADMIN) & filters.regex("zoro.moe"))
